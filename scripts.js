@@ -21,7 +21,14 @@ formulario.addEventListener("submit",async(evento)=>{
             const cidade = dados.localidade;// querido e gentil leitor
             const dadosGeo = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(cidade)}&count=1&language=pt&format=json&countryCode=BR`);
             const dadosGeoJson = await dadosGeo.json();
-            console.log(dadosGeoJson);
+            //console.log(dadosGeoJson);
+            if(dadosGeoJson.results && dadosGeoJson.results.length>0 ){
+                const {latitude,longitude} = dadosGeoJson.results[0];
+                console.log(latitude);
+                console.log(longitude);
+            }else{
+                console.log("Não entrou.")
+            }
 
 
             //https://geocoding-api.open-meteo.com/v1/search?name=rio+do+sul&count=1&language=pt&format=json&countryCode=BR
