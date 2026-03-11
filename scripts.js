@@ -35,8 +35,6 @@ formulario.addEventListener("submit",async(evento)=>{
             }else{
                 console.log("Não entrou.")
             }
-
-
             //https://geocoding-api.open-meteo.com/v1/search?name=rio+do+sul&count=1&language=pt&format=json&countryCode=BR
 
         }
