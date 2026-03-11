@@ -9,7 +9,8 @@ formulario.addEventListener("submit", async (evento) => {
         alert("Por favor, digite um CEP com oito dígitos");
         return;
     }
-    resultado.innerHTML = "Buscando...";
+    //resultado.innerHTML = "Buscando...";
+    resultado.innerHTML = "<img height='50' src='Loading.gif'>";
     try {
         const endereco = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
         const dados = await endereco.json();
